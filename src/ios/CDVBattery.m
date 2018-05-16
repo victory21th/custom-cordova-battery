@@ -107,12 +107,12 @@
 
     if ([UIDevice currentDevice].batteryMonitoringEnabled == NO) {
         [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
-        [self updateBatteryStatus:NULL];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBatteryStatus:)
-                                                     name:UIDeviceBatteryStateDidChangeNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBatteryStatus:)
-                                                     name:UIDeviceBatteryLevelDidChangeNotification object:nil];
     }
+    [self updateBatteryStatus:NULL];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBatteryStatus:)
+                                                 name:UIDeviceBatteryStateDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBatteryStatus:)
+                                                 name:UIDeviceBatteryLevelDidChangeNotification object:nil];
 }
 
 /* turn off battery monitoring */
